@@ -4,3 +4,4 @@
 - Cache api calls (data shouldn't change, right?)
   - Add settings to reset cache
 - Settings screen
+- Create architecture diagram or something 
