@@ -1,3 +1,6 @@
 - Readme screenshots
 - App icon
 - Find better icons :D
+- Cache api calls (data shouldn't change, right?)
+  - Add settings to reset cache
+- Settings screen
