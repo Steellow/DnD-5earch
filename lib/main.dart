@@ -1,3 +1,4 @@
+import 'package:dnd_5earch/widgets/search_something.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,20 +32,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
-                FontAwesomeIcons.dAndD,
-                size: 48,
-              ),
-              Text("Search something"),
-            ],
-          ),
-        ),
+        child: SearchSomething(),
       ),
     );
   }
