@@ -1,6 +1,6 @@
+import 'package:dnd_5earch/widgets/search_box.dart';
 import 'package:dnd_5earch/widgets/search_something.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,9 +32,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: SearchSomething(),
+        child: Column(
+          children: const [
+            SearchSomething(),
+            SearchBox(),
+          ],
+        ),
       ),
     );
   }

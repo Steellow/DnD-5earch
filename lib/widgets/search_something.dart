@@ -6,16 +6,21 @@ class SearchSomething extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(
-            FontAwesomeIcons.dAndD,
-            size: 48,
-          ),
-          Text("Search something"),
-        ],
+    return Expanded(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                FontAwesomeIcons.dAndD,
+                size: 48,
+              ),
+            ),
+            Text("Search something"),
+          ],
+        ),
       ),
     );
   }
