@@ -1,16 +1,12 @@
-# dnd_5earch
+# DnD 5earch
 
-A new Flutter project.
+Simple Android app to search for things from the Dungeons and Dragons 5th Edition SRD. Powered by [Flutter](https://flutter.dev/) and [D&D 5e API](https://www.dnd5eapi.co/)
 
-## Getting Started
+## Download & install
 
-This project is a starting point for a Flutter application.
+- Coming to Google Play
+- .apk coming to Github Releases
 
-A few resources to get you started if this is your first Flutter project:
+## Commands
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `flutter run` to run the app locally
