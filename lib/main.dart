@@ -1,5 +1,5 @@
 import 'package:dnd_5earch/widgets/search_box.dart';
-import 'package:dnd_5earch/widgets/search_something.dart';
+import 'package:dnd_5earch/widgets/search_results.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: const [
-            SearchSomething(),
+            // SearchSomething(),
+            SearchResults(),
             SearchBox(),
           ],
         ),

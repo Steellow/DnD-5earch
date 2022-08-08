@@ -1,2 +1,3 @@
 - Readme screenshots
 - App icon
+- Find better icons :D
