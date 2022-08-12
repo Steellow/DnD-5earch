@@ -1,4 +1,4 @@
-import 'package:dnd_5earch/misc/item_type_enum.dart';
+import 'package:dnd_5earch/models/item_type.dart';
 import 'package:dnd_5earch/widgets/search_result_item.dart';
 import 'package:flutter/material.dart';
 

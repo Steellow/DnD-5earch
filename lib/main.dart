@@ -1,3 +1,4 @@
+import 'package:dnd_5earch/misc/http_client.dart';
 import 'package:dnd_5earch/widgets/search_box.dart';
 import 'package:dnd_5earch/widgets/search_results.dart';
 import 'package:dnd_5earch/widgets/search_something.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Dnd 5earch',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
@@ -32,6 +33,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final textController = TextEditingController();
+
+  @override
+  void initState() {
+    // Save to HIVE on app first launch
+    HttpClient.getAllSearchResults();
+    super.initState();
+  }
 
   textChangeCallback() {
     setState(() {});
