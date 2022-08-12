@@ -5,3 +5,6 @@
   - Add settings to reset cache
 - Settings screen
 - Create architecture diagram or something 
+- Android internet permission
+- Subccategories (e.g. "Alignments" shows list of possible alignments)
+  - Is shown as regular item in the search results
