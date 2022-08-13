@@ -31,7 +31,7 @@ class HttpClient {
       }
     }
 
-    // print("Full list: $allSearchResults");
+    print("Fetched total of ${allSearchResults.length} search results");
     return allSearchResults;
   }
 
@@ -39,26 +39,26 @@ class HttpClient {
     "ability-scores",
     "alignments",
     "backgrounds",
-    // "languages",
-    // "proficiencies",
-    // "skills",
-    // "classes",
-    // "conditions",
-    // "damage-types",
-    // "magic-schools",
-    // "equipment",
-    // "equipment-categories",
-    // "magic-items",
-    // "weapon-properties",
-    // "feats",
-    // "features",
-    // "monsters",
-    // "races",
-    // "rule-sections",
-    // "rules",
-    // "spells",
-    // "subclasses",
-    // "subraces",
-    // "traits",
+    "languages",
+    "proficiencies",
+    "skills",
+    "classes",
+    "conditions",
+    "damage-types",
+    "magic-schools",
+    "equipment",
+    "equipment-categories",
+    "magic-items",
+    "weapon-properties",
+    "feats",
+    "features",
+    "monsters",
+    "races",
+    "rule-sections",
+    "rules",
+    "spells",
+    "subclasses",
+    "subraces",
+    "traits",
   ];
 }
