@@ -1,13 +1,24 @@
+import "package:dnd_5earch/misc/constants.dart";
 import "package:dnd_5earch/misc/storage.dart";
+import "package:dnd_5earch/models/item_type.dart";
 import "package:dnd_5earch/models/search_result.dart";
 import "package:dnd_5earch/widgets/loading_screen.dart";
 import "package:dnd_5earch/widgets/search_box.dart";
 import "package:dnd_5earch/widgets/search_results.dart";
 import "package:dnd_5earch/widgets/search_something.dart";
 import "package:flutter/material.dart";
+import "package:hive_flutter/hive_flutter.dart";
 
-void main() {
+void main() async {
+  await initHive();
   runApp(const MyApp());
+}
+
+Future<void> initHive() async {
+  Hive.registerAdapter(SearchResultAdapter());
+  Hive.registerAdapter(ItemTypeAdapter());
+  await Hive.initFlutter();
+  await Hive.openBox(HIVE_BOX);
 }
 
 class MyApp extends StatefulWidget {

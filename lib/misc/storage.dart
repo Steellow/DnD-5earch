@@ -1,38 +1,28 @@
-import "dart:convert";
-
 import "package:dnd_5earch/misc/constants.dart";
 import "package:dnd_5earch/misc/http_client.dart";
 import "package:dnd_5earch/models/search_result.dart";
-import "package:shared_preferences/shared_preferences.dart";
+import "package:hive/hive.dart";
 
 class Storage {
   static Future<List<SearchResult>> getAllItems() async {
     print("Storage.getAllItems called");
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var box = Hive.box(HIVE_BOX);
+    var items = box.get(KEY_ALL_ITEMS);
 
-    List<String>? json = prefs.getStringList(KEY_ALL_ITEMS);
-
-    // If items aren't yet saved to prefs, save them
-    if (json == null) {
+    // If items aren't yet saved to hive, save them
+    if (items == null) {
       List<SearchResult> items = await HttpClient.getAllSearchResults();
       saveAllItems(items);
       return items;
     }
 
-    // Otherwise decode json list
-    print("Items found from storage, decoding json");
-    List<SearchResult> items =
-        json.map((e) => SearchResult.fromJson(jsonDecode(e))).toList();
-    return items;
+    return items.cast<SearchResult>();
   }
 
-  static void saveAllItems(List<SearchResult> items) async {
+  static void saveAllItems(List<SearchResult> items) {
     print("Storage.saveAllItems called");
-
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    List<String> json = items.map((e) => jsonEncode(e.toJson())).toList();
-    prefs.setStringList(KEY_ALL_ITEMS, json);
+    var box = Hive.box(HIVE_BOX);
+    box.put(KEY_ALL_ITEMS, items);
   }
 }

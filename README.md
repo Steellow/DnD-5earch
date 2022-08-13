@@ -10,3 +10,4 @@ Simple Android app to search for things from the Dungeons and Dragons 5th Editio
 ## Commands
 
 - `flutter run` to run the app locally
+- `flutter packages pub run build_runner build` to generate [Hive adapters](https://docs.hivedb.dev/#/custom-objects/generate_adapter)

@@ -1,28 +1,82 @@
+import "package:hive/hive.dart";
+
+part "item_type.g.dart";
+
+@HiveType(typeId: 0)
 enum ItemType {
+  @HiveField(0)
   abilityScore,
+
+  @HiveField(1)
   alignment,
+
+  @HiveField(2)
   background,
+
+  @HiveField(3)
   language,
+
+  @HiveField(4)
   proficiency,
+
+  @HiveField(5)
   skill,
+
+  @HiveField(6)
   clazz,
+
+  @HiveField(7)
   condition,
+
+  @HiveField(8)
   damageType,
+
+  @HiveField(9)
   magicSchool,
+
+  @HiveField(10)
   equipment,
+
+  @HiveField(11)
   equipmentCategory,
+
+  @HiveField(12)
   magicItem,
+
+  @HiveField(13)
   weaponProperty,
+
+  @HiveField(14)
   feat,
+
+  @HiveField(15)
   feature,
+
+  @HiveField(16)
   monster,
+
+  @HiveField(17)
   race,
+
+  @HiveField(18)
   ruleSection,
+
+  @HiveField(19)
   rule,
+
+  @HiveField(20)
   spell,
+
+  @HiveField(21)
   subclass,
+
+  @HiveField(22)
   subrace,
+
+  @HiveField(23)
   trait,
+
+  @HiveField(24, defaultValue: true)
   unknown
 }
 
