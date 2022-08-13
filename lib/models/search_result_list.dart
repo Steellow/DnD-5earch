@@ -1,4 +1,4 @@
-import 'package:dnd_5earch/models/search_result.dart';
+import "package:dnd_5earch/models/search_result.dart";
 
 class SearchResultList {
   final int count;
@@ -8,12 +8,12 @@ class SearchResultList {
 
   factory SearchResultList.fromJson(Map<String, dynamic> json) {
     List<SearchResult> resultsList =
-        (json['results'] as List).map((i) => SearchResult.fromJson(i)).toList();
+        (json["results"] as List).map((i) => SearchResult.fromJson(i)).toList();
 
-    return SearchResultList(json['count'], resultsList);
+    return SearchResultList(json["count"], resultsList);
   }
 
   @override
   String toString() =>
-      'SearchResultList(count: $count, results: ${results.map((e) => e.toString())})';
+      "SearchResultList(count: $count, results: ${results.map((e) => e.toString())})";
 }

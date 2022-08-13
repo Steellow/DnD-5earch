@@ -13,3 +13,6 @@
 - Tests
   - HttpController
 - [JSON to Dart](https://javiercbk.github.io/json_to_dart/)
+- Error screen to future builder
+- Reduce app size
+- Button to clear storage

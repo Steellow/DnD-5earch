@@ -26,6 +26,10 @@ enum ItemType {
   unknown
 }
 
+extension ParseToString on ItemType {
+  String toShortString() => toString().split(".").last;
+}
+
 ItemType getItemTypeFromUrl(String url) {
   String strippedUrl = url.split("/")[2];
 
@@ -80,5 +84,14 @@ ItemType getItemTypeFromUrl(String url) {
       return ItemType.trait;
     default:
       return ItemType.unknown;
+  }
+}
+
+ItemType getItemTypeFromString(String typeAsString) {
+  try {
+    return ItemType.values.byName(typeAsString);
+  } catch (e) {
+    print("typeAsString: $typeAsString");
+    throw Exception("Coudln't parse type string $typeAsString. Error: $e");
   }
 }

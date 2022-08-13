@@ -1,8 +1,8 @@
-import 'dart:convert';
+import "dart:convert";
 
-import 'package:dnd_5earch/models/search_result.dart';
-import 'package:dnd_5earch/models/search_result_list.dart';
-import 'package:http/http.dart' as http;
+import "package:dnd_5earch/models/search_result.dart";
+import "package:dnd_5earch/models/search_result_list.dart";
+import "package:http/http.dart" as http;
 
 class HttpClient {
   static const String baseUrl = "https://www.dnd5eapi.co/api/";
@@ -12,21 +12,27 @@ class HttpClient {
 
     for (var endpoint in searchEndpoints) {
       //
-      await http.get(Uri.parse(baseUrl + endpoint)).then((res) {
-        //
-        if (res.statusCode == 200) {
-          SearchResultList list =
-              SearchResultList.fromJson(jsonDecode(res.body));
-          allSearchResults = [...allSearchResults, ...list.results];
+      try {
+        await http.get(Uri.parse(baseUrl + endpoint)).then((res) {
           //
-        } else {
-          throw Exception('Failed to fetch $endpoint');
-        }
-      });
+          if (res.statusCode == 200) {
+            SearchResultList list =
+                SearchResultList.fromJson(jsonDecode(res.body));
+            allSearchResults = [...allSearchResults, ...list.results];
+            //
+          } else {
+            throw Exception("Failed to fetch $endpoint");
+          }
+        });
+      } catch (e, trace) {
+        // TODO: Proper error logging
+        print(e);
+        print(trace);
+      }
     }
 
-    print("Full list: $allSearchResults");
-    return List.empty();
+    // print("Full list: $allSearchResults");
+    return allSearchResults;
   }
 
   static const List<String> searchEndpoints = [
