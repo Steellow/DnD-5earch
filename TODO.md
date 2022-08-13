@@ -9,3 +9,7 @@
 - Subccategories (e.g. "Alignments" shows list of possible alignments)
   - Is shown as regular item in the search results
 - Use [JSON seriazible](https://pub.dev/packages/json_serializable)?
+- Dark mode
+- Tests
+  - HttpController
+- [JSON to Dart](https://javiercbk.github.io/json_to_dart/)
