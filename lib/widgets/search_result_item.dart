@@ -14,7 +14,12 @@ class SearchResultItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
       child: Card(
         child: ListTile(
-          leading: Icon(getItemTypeIcon(type)),
+          leading: SizedBox(
+            height: double.infinity, // Centers the icon
+            child: Icon(
+              getItemTypeIcon(type),
+            ),
+          ),
           title: Text(title),
           subtitle: Text(type.toUIString()),
         ),
