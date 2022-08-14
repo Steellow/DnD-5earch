@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:hive/hive.dart";
+import 'package:dnd_5earch/misc/string_extension.dart';
 
 part "item_type.g.dart";
 
@@ -84,6 +85,12 @@ enum ItemType {
 
 extension ParseToString on ItemType {
   String toShortString() => toString().split(".").last;
+  String toUIString() {
+    String str = toShortString()..replaceAll("z", "s");
+    str = str.camelCaseToSpaces(); // Must be before capitalization
+    str = str.capitalize();
+    return str;
+  }
 }
 
 IconData getItemTypeIcon(ItemType type) {

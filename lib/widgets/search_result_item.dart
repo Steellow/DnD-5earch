@@ -16,6 +16,7 @@ class SearchResultItem extends StatelessWidget {
         child: ListTile(
           leading: Icon(getItemTypeIcon(type)),
           title: Text(title),
+          subtitle: Text(type.toUIString()),
         ),
       ),
     );
