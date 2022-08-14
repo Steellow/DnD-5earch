@@ -1,6 +1,5 @@
-import 'package:dnd_5earch/models/item_type.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import "package:dnd_5earch/models/item_type.dart";
+import "package:flutter/material.dart";
 
 class SearchResultItem extends StatelessWidget {
   final String title;
@@ -15,23 +14,10 @@ class SearchResultItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
       child: Card(
         child: ListTile(
-          leading: Icon(getIconFromType(type)),
+          leading: Icon(getItemTypeIcon(type)),
           title: Text(title),
         ),
       ),
     );
-  }
-}
-
-IconData getIconFromType(ItemType type) {
-  switch (type) {
-    case ItemType.equipment:
-      return FontAwesomeIcons.hatWizard;
-    case ItemType.monster:
-      return FontAwesomeIcons.hippo;
-    case ItemType.spell:
-      return FontAwesomeIcons.bookSkull;
-    default:
-      return FontAwesomeIcons.question;
   }
 }

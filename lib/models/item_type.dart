@@ -1,3 +1,5 @@
+import "package:flutter/material.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:hive/hive.dart";
 
 part "item_type.g.dart";
@@ -82,6 +84,62 @@ enum ItemType {
 
 extension ParseToString on ItemType {
   String toShortString() => toString().split(".").last;
+}
+
+IconData getItemTypeIcon(ItemType type) {
+  switch (type) {
+    case ItemType.abilityScore:
+      return FontAwesomeIcons.diceD20;
+    case ItemType.alignment:
+      return FontAwesomeIcons.dna;
+    case ItemType.background:
+      return FontAwesomeIcons.clockRotateLeft;
+    case ItemType.language:
+      return FontAwesomeIcons.language;
+    case ItemType.proficiency:
+      return FontAwesomeIcons.trophy;
+    case ItemType.skill:
+      return FontAwesomeIcons.brain;
+    case ItemType.clazz:
+      return FontAwesomeIcons.award;
+    case ItemType.condition:
+      return FontAwesomeIcons.biohazard;
+    case ItemType.damageType:
+      return FontAwesomeIcons.fire;
+    case ItemType.magicSchool:
+      return FontAwesomeIcons.hatWizard;
+    case ItemType.equipment:
+      return FontAwesomeIcons.coins;
+    case ItemType.equipmentCategory:
+      return FontAwesomeIcons.shirt;
+    case ItemType.magicItem:
+      return FontAwesomeIcons.wandMagic;
+    case ItemType.weaponProperty:
+      return FontAwesomeIcons.featherPointed;
+    case ItemType.feat:
+      return FontAwesomeIcons.handSparkles;
+    case ItemType.feature:
+      return FontAwesomeIcons.circleInfo;
+    case ItemType.monster:
+      return FontAwesomeIcons.dragon;
+    case ItemType.race:
+      return FontAwesomeIcons.paw;
+    case ItemType.ruleSection:
+      return FontAwesomeIcons.section;
+    case ItemType.rule:
+      return FontAwesomeIcons.gavel;
+    case ItemType.spell:
+      return FontAwesomeIcons.bookSkull;
+    case ItemType.subclass:
+      return FontAwesomeIcons.plus;
+    case ItemType.subrace:
+      return FontAwesomeIcons.s;
+    case ItemType.trait:
+      return FontAwesomeIcons.clover;
+    case ItemType.unknown:
+    default:
+      return FontAwesomeIcons.question;
+  }
 }
 
 ItemType getItemTypeFromUrl(String url) {
