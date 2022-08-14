@@ -89,8 +89,11 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            textController.text.isNotEmpty
-                ? SearchResults(items: widget.items)
+            textController.text.length > 1
+                ? SearchResults(
+                    allItems: widget.items,
+                    searchTerm: textController.text,
+                  )
                 : const SearchSomething(),
             SearchBox(
               controller: textController,
